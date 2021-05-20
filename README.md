@@ -1,3 +1,3 @@
 # Communal Payments Front
 
-Check out the [Demo](https://github.com/jonybekov/communal-payments).
+Check out the [Demo](https://communal-payments.netlify.app/).
