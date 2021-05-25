@@ -1,6 +1,10 @@
 <template>
   <v-app>
-    <Nuxt />
+    <Appbar />
+
+    <v-container class="pt-20 block">
+      <Nuxt />
+    </v-container>
   </v-app>
 </template>
 

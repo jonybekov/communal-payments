@@ -1,5 +1,5 @@
 <template>
-  <v-container class="block">
+  <div>
     <div>
       <h1 class="text-4xl font-bold mb-4">
         Onlayn to'lovlar
@@ -23,16 +23,23 @@
           <img width="40" height="40" src="/images/home.webp" alt="" />
         </span>
         <h3 class="text-3xl  font-bold">
-          Kommunal xizmatlar
+          Barcha sohalar
         </h3>
       </div>
-      <Services />
+      <PopularServices />
     </div>
-  </v-container>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  async mounted() {
+    // const { data } = await this.$store.dispatch("categories/fetchCategories");
+    // const { data: userData } = await this.$axios.get(`/user/getMe`);
+    // console.log("Categories", data);
+    // console.log("User data", userData);
+  }
+};
 </script>
 
 <style></style>
