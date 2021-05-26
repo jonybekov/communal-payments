@@ -17,12 +17,12 @@ export const actions = {
         .catch(err => reject(error))
     );
   },
-  deleteService(ctx, id) {
+  deleteService(ctx, { id }) {
     return new Promise((resolve, reject) =>
       this.$axios
         .delete(`/communal/${id}/`)
         .then(response => resolve(response))
-        .catch(err => reject(error))
+        .catch(err => reject(err))
     );
   }
 };

@@ -1,6 +1,17 @@
 <template>
   <v-container class="block py-12 w-full md:w-1/2 lg:w-1/4 mx-auto">
     <h1 class="text-3xl font-bold mb-8">Saytga kirish</h1>
+    <h3 class="text-lg font-semibold text-gray-500 mb-4">
+      Mavjud foydalanuvchilar:
+    </h3>
+    <div class="mb-4">
+      <v-btn color="primary" @click="onSelectAdmin">
+        Admin
+      </v-btn>
+      <v-btn color="primary" @click="onSelectUser">
+        User
+      </v-btn>
+    </div>
     <v-form>
       <v-row>
         <v-col cols="12">
@@ -19,7 +30,12 @@
           ></v-text-field>
         </v-col>
       </v-row>
-      <v-btn color="primary" block :loading="loading" @click="signIn">
+      <v-btn
+        class="bg-green-500 text-white"
+        block
+        :loading="loading"
+        @click="signIn"
+      >
         Kirish
       </v-btn>
     </v-form>
@@ -57,6 +73,14 @@ export default {
         console.error(err);
         this.loading = false;
       }
+    },
+    onSelectAdmin() {
+      this.username = "ADMIN";
+      this.password = "ADMIN";
+    },
+    onSelectUser() {
+      this.username = "USER";
+      this.password = "USER";
     }
   }
 };

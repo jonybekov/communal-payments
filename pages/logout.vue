@@ -5,7 +5,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  middleware({ store, redirect }) {
+    store.commit("auth/LOG_OUT");
+    redirect("/");
+  }
+};
 </script>
 
 <style></style>

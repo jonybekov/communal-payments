@@ -38,7 +38,12 @@
           </v-btn>
         </template>
         <v-list>
-          <v-list-item link v-for="(item, i) in items" :key="i" :to="item.to">
+          <v-list-item
+            link
+            v-for="(item, i) in navItems"
+            :key="i"
+            :to="item.to"
+          >
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item>
         </v-list>
@@ -51,15 +56,14 @@
 import { mapGetters } from "vuex";
 
 export default {
-  data() {
-    return {
-      items: [
-        { title: "Shaxsiy kabinet", to: "/profile/admin" },
-        { title: "Chiqish", to: "/logout" }
-      ]
-    };
-  },
   computed: {
+    navItems() {
+      return [
+        { title: "Shaxsiy kabinet", to: "/profile" },
+        { title: "Chiqish", to: "/logout" }
+      ];
+    },
+
     ...mapGetters({
       isAuthenticated: "auth/isAuthenticated"
     })
